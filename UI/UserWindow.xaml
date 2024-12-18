@@ -18,21 +18,21 @@
                 <Button x:Name="ProceedButton" Content="Proceed" Canvas.Left="362" Canvas.Top="361" Height="40" Width="156" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ProceedButton_Click"/>
             </Canvas>
         </GroupBox>
-        <GroupBox x:Name="PlayGameMenuGroupBox" Height="459" Header="GroupBox" Width="800" Canvas.Left="883" Canvas.Top="-109" Visibility="Hidden">
+        <GroupBox x:Name="PlayGameMenuGroupBox" Height="459" Header="GroupBox" Width="800" Visibility="Hidden">
             <Canvas>
-                <ComboBox x:Name="CategoryGameComboBox" HorizontalAlignment="Left" Width="238" Height="30" Canvas.Left="339" VerticalAlignment="Top" Canvas.Top="37"/>
-                <Label Content="Choose category" Canvas.Left="190" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <ComboBox x:Name="DifficultyGameComboBox" Width="238" Height="30" Canvas.Left="339" Canvas.Top="87" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Label Content="Choose difficulty" Canvas.Left="190" Canvas.Top="89" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <ListBox x:Name="CategoryGameListBox" HorizontalAlignment="Left" Width="238" Height="100" Canvas.Left="339" VerticalAlignment="Top" Canvas.Top="37" SelectionMode="Multiple"/>
+                <Label Content="Choose categories" Canvas.Left="190" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <ComboBox x:Name="DifficultyGameComboBox" Width="238" Height="30" Canvas.Left="342" Canvas.Top="167" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Choose difficulty" Canvas.Left="194" Canvas.Top="169" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Button Content="Menu" Canvas.Left="10" Canvas.Top="364" Height="50" Width="142" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="Button_Click_1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Slider x:Name="AttemptsSlider" Canvas.Left="339" Canvas.Top="135" Width="238" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" Maximum="15" SmallChange="1"/>
-                <Label Content="Choose amount of attempts" Canvas.Left="160" Canvas.Top="127" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Content="Infinite" Canvas.Left="323" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Content="15" Canvas.Left="554" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Button x:Name="StartGameButton" Content="Start Game" Canvas.Left="261" Canvas.Top="208" Height="71" Width="259" FontFamily="Comic Sans MS" FontSize="38" FontWeight="Bold" Click="StartGameButton_Click"/>
+                <Slider x:Name="AttemptsSlider" Canvas.Left="342" Canvas.Top="215" Width="238" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24" Maximum="15" SmallChange="1"/>
+                <Label Content="Choose amount of attempts" Canvas.Left="164" Canvas.Top="207" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Infinite" Canvas.Left="326" Canvas.Top="224" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="15" Canvas.Left="558" Canvas.Top="224" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="StartGameButton" Content="Start Game" Canvas.Left="264" Canvas.Top="288" Height="71" Width="260" FontFamily="Comic Sans MS" FontSize="38" FontWeight="Bold" Click="StartGameButton_Click"/>
             </Canvas>
         </GroupBox>
-        <GroupBox x:Name="GameGroupBox" Height="459" Header="GroupBox" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+        <GroupBox x:Name="GameGroupBox" Height="459" Header="GroupBox" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Canvas>
                 <Label x:Name="WordLabel" Content="Label" HorizontalAlignment="Left" Height="82" Canvas.Left="197" VerticalAlignment="Top" Width="394" Canvas.Top="31" FontFamily="Comic Sans MS" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"/>
@@ -67,9 +67,11 @@
                 <Button x:Name="buttonY" Content="Y" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="489" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Button x:Name="buttonZ" Content="Z" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="549" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Button x:Name="ExitGameButton" Content="Menu" Canvas.Left="10" Canvas.Top="385" Height="41" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ExitGameButton_Click"/>
+                <Label x:Name="ViewCategoryLabel" Content="Label" Canvas.Left="18" Canvas.Top="13" Visibility="Hidden"/>
+                <Button x:Name="ViewCategoryButton" Content="View category" Canvas.Left="17" Canvas.Top="52" Click="ViewCategoryButton_Click"/>
             </Canvas>
         </GroupBox>
-        <GroupBox x:Name="SettingsGroupBox" Height="459" Header="GroupBox" Width="800">
+        <GroupBox x:Name="SettingsGroupBox" Height="459" Header="GroupBox" Width="800" Visibility="Hidden">
             <Canvas>
                 <Button x:Name="ReturnToMainMenuButton" Content="Menu" Canvas.Left="10" Canvas.Top="376" Height="41" Width="142" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ReturnToMainMenuButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Button x:Name="Red" Content="" Width="50" Height="50" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Red" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="10"/>

@@ -115,7 +115,12 @@ namespace UI
             }
         }
 
-        
+        private void LoadCategories()
+        {
+            // Assuming _categoryRepository.GetCategories() returns a list of categories
+            var categories = _categoryRepository.GetCategories();
+            CategoryGameListBox.ItemsSource = categories;
+        }
 
         Random rand = new Random();
             string word, shown = "";
@@ -210,11 +215,12 @@ namespace UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-                CategoryGameComboBox.ItemsSource = _categoryRepository.GetCategories();
-                DifficultyGameComboBox.ItemsSource = _difficultiesRepository.GetDifficulties();
-                PlayGameMenuGroupBox.Visibility = Visibility.Visible;
-                MainMenuGroupBox.Visibility = Visibility.Hidden;
-            CategoryGameComboBox.ItemsSource = _categoryRepository.GetCategories();
+                
+                //DifficultyGameComboBox.ItemsSource = _difficultiesRepository.GetDifficulties();
+                //PlayGameMenuGroupBox.Visibility = Visibility.Visible;
+                //MainMenuGroupBox.Visibility = Visibility.Hidden;
+            //CategoryGameComboBox.ItemsSource = _categoryRepository.GetCategories();
+            CategoryGameListBox.ItemsSource = _categoryRepository.GetCategories();
             DifficultyGameComboBox.ItemsSource = _difficultiesRepository.GetDifficulties();
             PlayGameMenuGroupBox.Visibility = Visibility.Visible;
             MainMenuGroupBox.Visibility = Visibility.Hidden;
@@ -401,6 +407,11 @@ namespace UI
             NextSong();
         }
 
+        private void ViewCategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewCategoryLabel.Visibility = Visibility.Visible;
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MainMenuGroupBox.Visibility = Visibility.Visible;
@@ -414,20 +425,23 @@ namespace UI
             shown = "";
             attemps += (int)AttemptsSlider.Value == 0 ? -6 : (int)AttemptsSlider.Value + 1;
 
-            var selectedCategory = (Category)CategoryGameComboBox.SelectedItem;
+            var selectedCategories = CategoryGameListBox.SelectedItems.Cast<Category>().ToList();
             var selectedDifficulty = (Difficulty)DifficultyGameComboBox.SelectedItem;
             try
             {
                 var cw = _catWordsRepository.GetCatWords()
-                    .Where(cw => cw.CategoryId == selectedCategory.CategoryId).ToList();
+                    .Where(cw => selectedCategories.Any(sc => sc.CategoryId == cw.CategoryId)).ToList();
                 var words = _wordsRepository.GetWordsWord()
                     .Where(w => cw.Any(c => c.WordId == w.WordId) // Compare CategoryId to IDs in cw
-                                && w.DifficultyId == selectedDifficulty.DifficultyId).ToList();
+                        && w.DifficultyId == selectedDifficulty.DifficultyId).ToList();
 
                 if (words.Any())
                 {
-                    word = words.ElementAt(rand.Next(0, words.Count)).WordText.ToLower();
-                    MessageBox.Show("Done!");
+                    var chosenWord = words.ElementAt(rand.Next(0, words.Count));
+                    word = chosenWord.WordText.ToLower();
+                    var category = _categoryRepository.GetCategories().FirstOrDefault(c => c.CategoryId == cw.First(cwItem => cwItem.WordId == chosenWord.WordId).CategoryId);
+                    ViewCategoryLabel.Content = category.CategoryName;
+                    MessageBox.Show("Word chosen!");
                 }
                 else
                 {
