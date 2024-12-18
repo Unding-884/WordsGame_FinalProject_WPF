@@ -1,0 +1,122 @@
+﻿<Window x:Class="UI.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="475" Width="800">
+    <Canvas>
+        <GroupBox x:Name="MainMenuGroupBox" Header="GroupBox" Height="434" Width="800" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="998" Canvas.Top="320">
+            <Canvas>
+                <Button x:Name="Play_GameButton" Content="Play Game" Height="40" Click="Button_Click" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Width="150" Canvas.Left="319" Canvas.Top="131" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button x:Name="ScoreButton" Content="Score" Height="40" Width="150" RenderTransformOrigin="0.522,0.426" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="24" IsCancel="True" Canvas.Left="319" Canvas.Top="176" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ScoreButton_Click_1"/>
+                <Button x:Name="ExitButton" Content="Exit" Height="40" Width="150" Canvas.Left="319" Canvas.Top="266" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ExitButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button x:Name="AdminButton" Content="Admin menu" Height="40" Width="150" Canvas.Left="10" Canvas.Top="361" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="AdminButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="SettingsButton" Content="Settings" Height="40" Width="150" Canvas.Left="319" Canvas.Top="221" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SettingsButton_Click"/>
+                <TextBox x:Name="PassTextBox" Canvas.Left="178" TextWrapping="Wrap" Canvas.Top="361" Width="164" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold"/>
+                <Button x:Name="ProceedButton" Content="Proceed" Canvas.Left="362" Canvas.Top="361" Height="40" Width="156" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ProceedButton_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="PlayGameMenuGroupBox" Height="459" Header="GroupBox" Width="800" Canvas.Left="883" Canvas.Top="-109" Visibility="Hidden">
+            <Canvas>
+                <ComboBox x:Name="CategoryGameComboBox" HorizontalAlignment="Left" Width="238" Height="30" Canvas.Left="339" VerticalAlignment="Top" Canvas.Top="37"/>
+                <Label Content="Choose category" Canvas.Left="190" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <ComboBox x:Name="DifficultyGameComboBox" Width="238" Height="30" Canvas.Left="339" Canvas.Top="87" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Choose difficulty" Canvas.Left="190" Canvas.Top="89" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Content="Menu" Canvas.Left="10" Canvas.Top="364" Height="50" Width="142" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="Button_Click_1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Slider x:Name="AttemptsSlider" Canvas.Left="339" Canvas.Top="135" Width="238" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" Maximum="15" SmallChange="1"/>
+                <Label Content="Choose amount of attempts" Canvas.Left="160" Canvas.Top="127" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Infinite" Canvas.Left="323" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="15" Canvas.Left="554" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="StartGameButton" Content="Start Game" Canvas.Left="261" Canvas.Top="208" Height="71" Width="259" FontFamily="Comic Sans MS" FontSize="38" FontWeight="Bold" Click="StartGameButton_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="GameGroupBox" Height="459" Header="GroupBox" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <Canvas>
+                <Label x:Name="WordLabel" Content="Label" HorizontalAlignment="Left" Height="82" Canvas.Left="197" VerticalAlignment="Top" Width="394" Canvas.Top="31" FontFamily="Comic Sans MS" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"/>
+                <Label x:Name="AttemptsLabel" Content="Label" Canvas.Left="624" Canvas.Top="100" HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"/>
+
+                <!-- Alphabet buttons -->
+                <Button x:Name="buttonA" Content="A" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="323" Canvas.Top="153" Click="buttonA_Click"/>
+                <Button x:Name="buttonB" Content="B" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="372" Canvas.Top="153" Click="buttonA_Click"/>
+                <Button x:Name="buttonC" Content="C" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="117" Canvas.Top="198" Click="buttonA_Click"/>
+                <Button x:Name="buttonD" Content="D" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="181" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonE" Content="E" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="240" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonF" Content="F" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="298" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonG" Content="G" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="353" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonH" Content="H" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="407" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonI" Content="I" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="470" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonJ" Content="J" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="528" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonK" Content="K" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="589" Canvas.Top="198" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonL" Content="L" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="163" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="buttonM" Content="M" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="225" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonN" Content="N" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="283" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonO" Content="O" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="338" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonP" Content="P" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="392" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonQ" Content="Q" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="447" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonR" Content="R" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="509" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonS" Content="S" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="569" Canvas.Top="252" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonT" Content="T" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="210" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonU" Content="U" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="265" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonV" Content="V" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="323" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonW" Content="W" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="378" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonX" Content="X" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="432" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonY" Content="Y" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="489" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="buttonZ" Content="Z" Width="40" Height="40" FontFamily="Comic Sans MS" FontSize="24" Canvas.Left="549" Canvas.Top="309" Click="buttonA_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ExitGameButton" Content="Menu" Canvas.Left="10" Canvas.Top="385" Height="41" Width="92" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ExitGameButton_Click"/>
+            </Canvas>
+        </GroupBox>
+        <GroupBox x:Name="SettingsGroupBox" Height="459" Header="GroupBox" Width="800">
+            <Canvas>
+                <Button x:Name="ReturnToMainMenuButton" Content="Menu" Canvas.Left="10" Canvas.Top="376" Height="41" Width="142" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Click="ReturnToMainMenuButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button x:Name="Red" Content="" Width="50" Height="50" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Red" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="10"/>
+                <Button x:Name="ColorButton1" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="65" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Blue" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton2" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="120" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Green" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton3" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="175" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Yellow" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton4" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="10" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Purple" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton5" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="65" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Orange" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton6" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="120" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Pink" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton7" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="175" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Brown" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton8" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="65" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Cyan" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ColorButton9" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="120" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Magenta" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ColorButton10" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="175" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Lime" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ColorButton11" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="10" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeBackgroundButton_Click" Background="Teal" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <Button x:Name="ChangeTextColorRedButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="534" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Red" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorWhiteButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="594" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="White" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorBlackButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="654" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Black" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorYellowButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="714" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Yellow" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorBlueButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="534" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Blue" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorGreenButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="594" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Green" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorPurpleButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="654" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Purple" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorOrangeButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="714" Canvas.Top="65" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Orange" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorPinkButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="534" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Pink" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorBrownButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="594" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Brown" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorCyanButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="654" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Cyan" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTextColorMagentaButton" Tag="ColorChangeButton" Content="" Width="50" Height="50" Canvas.Left="714" Canvas.Top="120" FontFamily="Comic Sans MS" FontSize="16" Click="ChangeTextColorButton_Click" Background="Magenta" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Change background color" Tag="ColorChangeButton" Canvas.Left="16" Canvas.Top="175" FontFamily="Comic Sans MS" FontSize="20"/>
+                <Label Content="Change text color" Canvas.Left="577" Canvas.Top="186" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="StopMusicButton" Content="Stop Music" Canvas.Left="508" Canvas.Top="256" Height="48" Width="179" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" Click="StopMusicButton_Click"/>
+                <Button x:Name="RenewMusicButton" Content="Renew Music" Canvas.Left="508" Canvas.Top="344" Height="48" Width="179" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Click="RenewMusicButton_Click"/>
+                <Button x:Name="_25Button" Content="25%" Canvas.Left="508" Canvas.Top="309" Height="30" Width="40" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Click="_25Button_Click"/>
+                <Button x:Name="_50Button" Content="50%" Canvas.Left="553" Canvas.Top="309" Height="30" Width="40" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Click="_50Button_Click"/>
+                <Button x:Name="_75Button" Content="75%" Canvas.Left="597" Canvas.Top="309" Height="30" Width="40" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Click="_75Button_Click"/>
+                <Button x:Name="_100Button" Content="100%" Canvas.Left="642" Canvas.Top="309" Height="30" Width="45" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Click="_100Button_Click"/>
+                <Button x:Name="NextSongButton" Content="&gt;" Height="136" Canvas.Left="693" Canvas.Top="256" Width="54" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="72" FontFamily="Comic Sans MS" FontWeight="Bold" Click="NextSongButton_Click"/>
+
+            </Canvas>
+        </GroupBox>
+
+        <GroupBox x:Name="ScoreGroupBox" Height="459" Header="GroupBox" Width="800" Visibility="Hidden">
+            <Canvas>
+                <DataGrid x:Name="ScoreDataGrid" Width="780" Height="359" Canvas.Left="10" Canvas.Top="30" AutoGenerateColumns="True" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                </DataGrid>
+                <Button x:Name="MainMenuFromScore" Content="Menu" Canvas.Left="10" Canvas.Top="394" Height="32" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" FontSize="22" Click="MainMenuFromScore_Click"/>
+            </Canvas>
+        </GroupBox>
+    </Canvas>
+</Window>

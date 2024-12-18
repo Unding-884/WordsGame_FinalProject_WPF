@@ -1,0 +1,76 @@
+﻿<Window x:Class="UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="527" Width="800">
+    <Grid>
+         
+                    <TabControl>
+                        <TabItem Header="Difficulties">
+                            <Grid>
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Difficulty Level:" Width="100"/>
+                                        <TextBox x:Name="DifficultyLevelTextBox" Width="200"/>
+                                    </StackPanel>
+                                    <Button Content="Add Difficulty" Click="AddDifficulty_Click" Margin="5"/>
+                                    <Button Content="Update Difficulty" Click="UpdateDifficulty_Click" Margin="5"/>
+                                    <Button Content="Delete Difficulty" Click="DeleteDifficulty_Click" Margin="5"/>
+                                    <Button Content="Get Difficulty" Click="GetDifficulty_Click" Margin="5"/>
+                                    <DataGrid x:Name="DifficultiesDataGrid" AutoGenerateColumns="True" Margin="5" Height="191"/>
+                        <Button x:Name="ReturnToGame" Content="Return to game" Click="ReturnToGame_Click"/>
+                    </StackPanel>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Words" Margin="3,-1,-7,-1">
+                            <Grid>
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Word:" Width="100"/>
+                                        <TextBox x:Name="WordTextBox" Width="200"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Select Difficulty:" Width="100"/>
+                                        <ComboBox x:Name="DifficultyComboBox" Width="200" DisplayMemberPath="DifficultyLevel" SelectedValuePath="DifficultyId"/>
+                                    </StackPanel>
+                                    <Button Content="Add Word" Click="AddWord_Click" Margin="5"/>
+                                    <Button Content="Update Word" Click="UpdateWord_Click" Margin="5"/>
+                                    <Button Content="Delete Word" Click="DeleteWord_Click" Margin="5"/>
+                                    <Button Content="Get Word" Click="GetWord_Click" Margin="5"/>
+                                    <DataGrid x:Name="WordsDataGrid" AutoGenerateColumns="False" Margin="5" Height="165">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Word ID" Binding="{Binding WordId}" Width="*"/>
+                                            <DataGridTextColumn Header="Word" Binding="{Binding WordText}" Width="*"/>
+                                            <DataGridTextColumn Header="Difficulty Level" Binding="{Binding DifficultyLevel}" Width="*"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <StackPanel Orientation="Horizontal" Height="132">
+                                        <Label Content="Select Category:" Width="100"/>
+                            <ListBox x:Name="CategoriesListBox" Width="268" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectionMode="Multiple"/>
+                        </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Categories" Margin="12,-2,-16,0">
+                            <Grid>
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Category Name:" Width="100"/>
+                                        <TextBox x:Name="CategoryNameTextBox" Width="200"/>
+                                    </StackPanel>
+                                    <Button Content="Add Category" Click="AddCategory_Click" Margin="5"/>
+                                    <Button Content="Update Category" Click="UpdateCategory_Click" Margin="5"/>
+                                    <Button Content="Delete Category" Click="DeleteCategory_Click" Margin="5"/>
+                                    <Button Content="Get Category" Click="GetCategory_Click" Margin="5"/>
+                                    <DataGrid x:Name="CategoriesDataGrid" AutoGenerateColumns="False" Margin="5" Height="165">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Category ID" Binding="{Binding CategoryId}" Width="*"/>
+                                            <DataGridTextColumn Header="Category Name" Binding="{Binding CategoryName}" Width="*"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                
+    </Grid>
+</Window>
